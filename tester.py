@@ -144,7 +144,10 @@ def init_config():
 	write_log(f"[{datetime.now().isoformat()}] INFO: Created new config file")
 
 def print_help():
-	print("Usage: python tester.py list | test [model ...]")
+	name = sys.argv[0]
+	if getattr(sys, "frozen", False):
+		name = os.path.basename(sys.executable)
+	print(f"Usage: {name} list | test [model ...]")
 	print("")
 	print("Commands:")
 	print("  init           Generate a config.json template")
