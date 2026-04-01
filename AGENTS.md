@@ -29,10 +29,10 @@ pip install requests
 ### Packaging
 
 ```bash
-pyinstaller --onefile tester.py
+pyinstaller --onefile --icon=blank.ico tester.py
 ```
 
-- No icon file exists in the project; do NOT add `--icon` flag
+- Use `blank.ico` as the icon file
 - Output is placed in `dist/tester.exe`
 
 This project has no formal test suite or linting configuration. For any new code:
