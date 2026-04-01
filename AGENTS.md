@@ -29,10 +29,10 @@ pip install requests
 ### Packaging
 
 ```bash
-pyinstaller --onefile --icon=blank.ico tester.py
+pyinstaller --onefile --icon=NONE tester.py
 ```
 
-- Use `blank.ico` as the icon file
+- Use `--icon=NONE` to prevent PyInstaller from embedding its default icon, letting Windows show its generic exe icon
 - Output is placed in `dist/tester.exe`
 
 This project has no formal test suite or linting configuration. For any new code:

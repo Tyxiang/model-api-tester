@@ -3,3 +3,5 @@ build/
 dist/
 *.spec
 config.json
+*.log
+_*
