@@ -11,7 +11,7 @@ CONFIG_FILE = "config.json"
 LIST_FILE = "list.json"
 TEST_FILE = "test.json"
 LOG_FILE = "tester.log"
-VERSION = "1.1.9"
+VERSION = "1.1.10"
 
 def get_script_dir():
 	if getattr(sys, "frozen", False):
