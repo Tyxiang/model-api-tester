@@ -8,20 +8,16 @@ A simple CLI tool for testing OpenAI-compatible AI API endpoints.
 - Test individual models or batch test all models
 - Measure response times
 - Log results to JSON files
-- Supports frozen executables (PyInstaller)
-
-## Installation
-
-```bash
-pip install requests
-```
+- Portable executable, no Python required
 
 ## Usage
+
+Download `tester.exe` and place it in a folder.
 
 ### Initialize Config
 
 ```bash
-python tester.py init
+tester.exe init
 ```
 
 Generates a `config.json` template. Edit it with your API details:
@@ -38,7 +34,7 @@ Generates a `config.json` template. Edit it with your API details:
 ### List Models
 
 ```bash
-python tester.py list
+tester.exe list
 ```
 
 Fetches and saves available models to `list.json`.
@@ -47,11 +43,11 @@ Fetches and saves available models to `list.json`.
 
 ```bash
 # Test all models from list.json
-python tester.py test
+tester.exe test
 
 # Test specific model(s)
-python tester.py test <model_name>
-python tester.py test <model1> <model2>
+tester.exe test <model_name>
+tester.exe test <model1> <model2>
 ```
 
 Results are saved to `test.json`, sorted by response time.
@@ -59,14 +55,15 @@ Results are saved to `test.json`, sorted by response time.
 ### Other Commands
 
 ```bash
-python tester.py --help     # Show help
-python tester.py --version  # Show version
+tester.exe --help     # Show help
+tester.exe --version  # Show version
 ```
 
-## Build Executable
+## Build from Source
 
 ```bash
-pyinstaller --onefile tester.py
+pip install requests
+pyinstaller --onefile --icon=NONE tester.py
 ```
 
 Output is placed in `dist/tester.exe`.
@@ -75,11 +72,11 @@ Output is placed in `dist/tester.exe`.
 
 | File | Description |
 |------|-------------|
-| `tester.py` | Main CLI tool |
+| `tester.exe` | Main CLI tool |
 | `config.json` | API configuration |
 | `list.json` | Cached model list |
 | `test.json` | Test results |
-| `tester.log` | Error log |
+| `tester.log` | Error log (auto-generated) |
 
 ## License
 
